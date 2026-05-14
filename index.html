@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>해례 글자블록</title>
+    <style>
+        body { font-family: 'Apple SD Gothic Neo', sans-serif; margin: 0; text-align: center; background-color: #fff; color: #333; }
+        header { padding: 40px 20px; }
+        .logo { width: 120px; margin-bottom: 10px; }
+        .intro { padding: 0 20px 40px; line-height: 1.6; font-size: 0.95rem; color: #666; }
+        
+        /* 20개 이미지 그리드 */
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px; }
+        .grid img { width: 100%; border-radius: 8px; cursor: pointer; transition: 0.2s; border: 1px solid #eee; }
+        
+        /* 모달 팝업 (GIF 보이기) */
+        .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; flex-direction: column; }
+        .modal img { width: 90%; max-width: 500px; border-radius: 15px; }
+        .close-btn { color: white; margin-top: 20px; font-size: 1.2rem; cursor: pointer; border: 1px solid white; padding: 10px 20px; border-radius: 30px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="해례 로고" class="logo">
+        <h1 style="font-size: 1.5rem; margin-top: 10px;">해례 글자블록</h1>
+    </header>
+
+    <section class="intro">
+        <p>한글의 창제 원리를 손끝으로 경험하는<br><b>해례 글자블록</b> 시리즈를 소개합니다.</p>
+    </section>
+
+    <div class="grid" id="gallery">
+        <!-- 스크립트로 20개 자동 생성 -->
+    </div>
+
+    <div id="modal" class="modal" onclick="closeModal()">
+        <img id="modal-img" src="" alt="조립 영상">
+        <div class="close-btn">닫기</div>
+    </div>
+
+    <script>
+        const gallery = document.getElementById('gallery');
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+
+        // 20개의 이미지 생성
+        for (let i = 1; i <= 20; i++) {
+            const img = document.createElement('img');
+            img.src = `${i}.jpg`; // 1.jpg, 2.jpg...
+            img.alt = `글자블록 ${i}`;
+            img.onclick = () => openModal(i);
+            gallery.appendChild(img);
+        }
+
+        function openModal(index) {
+            modalImg.src = `${index}.gif`; // 클릭 시 1.gif, 2.gif... 로드
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            modalImg.src = ''; // 리소스 절약을 위해 비움
+        }
+    </script>
+</body>
+</html>
