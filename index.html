@@ -12,79 +12,52 @@
             text-align: center;
             background-color: #ffffff;
             color: #222;
+            line-height: 1.6;
         }
 
-        /* [수정] 상단 히어로 배너 섹션 */
+        /* [수정] 이미지가 절대 잘리지 않도록 설정 */
         .hero {
             width: 100%;
-            height: 250px; /* 모바일에서 적당한 높이 */
-            background-image: url('top-banner.jpg'); /* 여기에 배경 이미지 파일명 입력 */
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
+            line-height: 0; /* 이미지 하단 미세한 간격 제거 */
         }
 
-        /* 배너 위 텍스트가 잘 보이도록 반투명 오버레이 (필요시 사용) */
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.2); /* 이미지 밝기에 따라 조절 */
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .logo {
-            width: 70px;
-            height: auto;
-            margin-bottom: 10px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-        }
-
-        h1 {
-            font-size: 1.5rem;
-            margin: 0;
-            font-weight: 800;
-            letter-spacing: -1px;
-            color: #1a1a1a;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+        .hero img {
+            width: 100%;    /* 화면 너비에 맞춤 */
+            height: auto;   /* 가로세로 비율 유지 (잘림 방지) */
+            display: block;
         }
 
         /* 소개글 섹션 */
         .intro {
-            padding: 30px 25px;
+            padding: 40px 25px;
             max-width: 500px;
             margin: 0 auto;
-            line-height: 1.6;
             word-break: keep-all;
         }
         .intro p {
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: #444;
-            margin: 0 0 15px 0;
+            margin-bottom: 15px;
         }
-        .highlight { color: #a68b6a; font-weight: 700; }
-        .bold { font-weight: 700; color: #1a1a1a; }
-        
+        .highlight {
+            color: #a68b6a; 
+            font-weight: 700;
+        }
+        .bold {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
         .guide-msg {
             display: inline-block;
             background: #f4f4f4;
-            padding: 8px 18px;
+            padding: 10px 20px;
             border-radius: 30px;
-            font-size: 0.85rem;
-            margin-top: 5px;
+            font-size: 0.9rem;
+            margin-top: 10px;
             color: #666;
         }
 
-        /* 그리드 설정 (한 줄에 4개) */
+        /* 이미지 그리드 (한 줄에 4개) */
         .grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -130,12 +103,9 @@
 </head>
 <body>
 
-    <!-- [수정] 배경 이미지가 들어가는 히어로 섹션 -->
+    <!-- [수정] 로고/타이틀 삭제하고 이미지만 전체 노출 -->
     <section class="hero">
-        <div class="hero-content">
-            <img src="logo.png" alt="해례 로고" class="logo">
-            <h1>해례 글자블록</h1>
-        </div>
+        <img src="top-banner.jpg" alt="해례 글자블록 메인 배너">
     </section>
 
     <section class="intro">
