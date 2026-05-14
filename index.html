@@ -3,72 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>해례 글자블록</title>
+    <title>해례 글자블록 조립 가이드</title>
     <style>
-        /* 기본 설정 */
+        /* 기본 스타일 설정 */
         body {
-            font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            font-family: 'Apple SD Gothic Neo', 'Pretendard', sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
             background-color: #ffffff;
-            color: #333;
+            color: #222;
+            line-height: 1.6;
         }
 
-        /* 상단 헤더 (로고 & 타이틀) */
+        /* 헤더: 로고 및 타이틀 */
         header {
-            padding: 30px 10px 10px;
+            padding: 40px 20px 10px;
         }
         .logo {
-            width: 70px; /* 로고 크기 조정 */
+            width: 80px;
             height: auto;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
         }
         h1 {
-            font-size: 1.3rem;
+            font-size: 1.6rem;
             margin: 0;
-            font-weight: 700;
-            letter-spacing: -0.5px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #1a1a1a;
         }
 
-        /* 소개글 */
+        /* 소개글 섹션: 요청하신 문구 적용 */
         .intro {
-            padding: 15px 20px 30px;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: #666;
-            word-break: keep-all;
+            padding: 20px 25px 40px;
+            max-width: 500px;
+            margin: 0 auto;
+            word-break: keep-all; /* 단어 단위 줄바꿈 */
         }
-        .intro b {
-            color: #222;
+        .intro p {
+            font-size: 1.05rem;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        /* 강조 텍스트 스타일 */
+        .highlight {
+            color: #a68b6a; /* 해례 브랜드 포인트 컬러 (차분한 골드브라운) */
+            font-weight: 700;
+        }
+        .bold {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .guide-msg {
+            display: inline-block;
+            background: #f4f4f4;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            color: #666;
         }
 
-        /* 한 줄에 4개씩 보여주는 그리드 설정 */
+        /* 이미지 그리드: 한 줄에 4개 배치 */
         .grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 핵심: 한 줄에 4개 배치 */
-            gap: 6px; /* 이미지 사이의 좁은 간격 */
-            padding: 0 10px 50px;
-            max-width: 600px; /* 너무 넓어지지 않게 제한 */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            padding: 0 15px 60px;
+            max-width: 600px;
             margin: 0 auto;
         }
-        
         .grid img {
             width: 100%;
-            aspect-ratio: 1 / 1; /* 정사각형 유지 */
+            aspect-ratio: 1 / 1;
             object-fit: cover;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
-            border: 1px solid #f0f0f0;
+            border: 1px solid #eee;
             transition: transform 0.1s ease;
         }
-        
-        /* 터치했을 때 느낌이 나도록 살짝 작아짐 */
         .grid img:active {
-            transform: scale(0.95);
+            transform: scale(0.92); /* 터치 시 피드백 */
         }
 
-        /* GIF 팝업창(모달) */
+        /* 모달 팝업 스타일 */
         .modal {
             display: none;
             position: fixed;
@@ -80,47 +98,52 @@
             align-items: center;
             flex-direction: column;
         }
-        
         .modal img {
             width: 85%;
-            max-width: 400px;
-            border-radius: 10px;
+            max-width: 450px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        
-        .modal-text {
-            color: #fff;
-            margin-top: 15px;
-            font-size: 0.9rem;
-        }
-
         .close-btn {
-            margin-top: 20px;
+            margin-top: 25px;
             color: #fff;
-            border: 1px solid #fff;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 10px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
             cursor: pointer;
+            background: rgba(255,255,255,0.1);
         }
     </style>
 </head>
 <body>
 
     <header>
+        <!-- 로고 파일명: logo.png -->
         <img src="logo.png" alt="해례 로고" class="logo">
         <h1>해례 글자블록</h1>
     </header>
 
     <section class="intro">
-        한글의 원리를 손끝으로 경험하는<br>
-        <b>해례 글자블록</b> 조립 가이드입니다.
+        <p>
+            <span class="bold">해례 한글 글자블럭</span>은 <span class="highlight">한글 창제원리</span>를 기반으로 만든 <br>
+            <span class="bold">3D 입체 글자 블록</span>으로,
+        </p>
+        <p>
+            단어를 이루는 <span class="highlight">자음과 모음을 조립</span>하면 <br>
+            <span class="bold">해당 형태가 완성</span>되는 블록 입니다.
+        </p>
+        <div class="guide-msg">
+            👇 <span class="bold">하단의 글자</span>를 눌러 조립 방법을 확인해보세요!
+        </div>
     </section>
 
+    <!-- 20개 이미지 그리드 영역 -->
     <div class="grid" id="gallery"></div>
 
+    <!-- GIF 팝업창 -->
     <div id="modal" class="modal" onclick="closeModal()">
-        <img id="modal-img" src="" alt="조립 영상">
-        <div class="modal-text">조립 영상을 따라 만들어보세요.</div>
+        <img id="modal-img" src="" alt="조립 가이드 영상">
         <div class="close-btn">닫기</div>
     </div>
 
@@ -129,13 +152,12 @@
         const modal = document.getElementById('modal');
         const modalImg = document.getElementById('modal-img');
 
-        // 1번부터 20번까지 이미지를 자동으로 생성
+        // 1.jpg ~ 20.jpg 이미지를 자동으로 생성합니다.
         for (let i = 1; i <= 20; i++) {
             const img = document.createElement('img');
-            // 나중에 1.jpg, 2.jpg... 파일을 올리면 연결됩니다.
             img.src = `${i}.jpg`; 
-            img.alt = `블록 ${i}`;
-            img.loading = "lazy"; // 성능 최적화
+            img.alt = `글자블록 ${i}`;
+            img.loading = "lazy";
             img.onclick = (e) => {
                 e.stopPropagation(); 
                 openModal(i);
@@ -143,18 +165,18 @@
             gallery.appendChild(img);
         }
 
-        // 팝업 열기 (1.gif, 2.gif... 연결)
+        // 모달 열기 (파일명 기반: 1.gif ~ 20.gif)
         function openModal(index) {
             modalImg.src = `${index}.gif`;
             modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
+            document.body.style.overflow = 'hidden'; // 팝업 시 배경 스크롤 방지
         }
 
-        // 팝업 닫기
+        // 모달 닫기
         function closeModal() {
             modal.style.display = 'none';
             modalImg.src = ''; 
-            document.body.style.overflow = 'auto'; // 배경 스크롤 다시 허용
+            document.body.style.overflow = 'auto';
         }
     </script>
 </body>
