@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>해례 글자블록 조립 가이드</title>
+    <title>해례 글자놀이터 가이드</title>
     <style>
         body {
             font-family: 'Apple SD Gothic Neo', 'Pretendard', sans-serif;
@@ -11,58 +11,76 @@
             padding: 0;
             text-align: center;
             background-color: #ffffff;
-            color: #222;
-            line-height: 1.6;
+            color: #333;
+            line-height: 1.5;
         }
 
-        /* [수정] 이미지가 절대 잘리지 않도록 설정 */
+        /* 상단 배너 섹션 */
         .hero {
             width: 100%;
-            line-height: 0; /* 이미지 하단 미세한 간격 제거 */
+            line-height: 0;
         }
-
         .hero img {
-            width: 100%;    /* 화면 너비에 맞춤 */
-            height: auto;   /* 가로세로 비율 유지 (잘림 방지) */
+            width: 100%;
+            height: auto;
             display: block;
         }
 
-        /* 소개글 섹션 */
+        /* [핵심] 소개글 섹션 디자인 */
         .intro {
-            padding: 40px 25px;
-            max-width: 500px;
+            padding: 45px 20px;
+            max-width: 600px;
             margin: 0 auto;
             word-break: keep-all;
         }
-        .intro p {
-            font-size: 1.05rem;
-            color: #444;
-            margin-bottom: 15px;
+
+        /* 일반 텍스트 (1, 3번째 줄) */
+        .text-light {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 5px;
+            display: block;
         }
-        .highlight {
-            color: #a68b6a; 
-            font-weight: 700;
-        }
-        .bold {
-            font-weight: 700;
+
+        /* 포인트 강조 1 (2번째 줄) */
+        .point-1 {
+            font-size: 1.35rem;
+            font-weight: 800;
             color: #1a1a1a;
+            letter-spacing: -1px;
+            margin-bottom: 35px;
+            display: block;
         }
+
+        /* 포인트 강조 2 (4번째 줄) */
+        .point-2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #c4a47c; /* 해례 포인트 컬러 */
+            background-color: #fdfaf5;
+            padding: 12px 15px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-top: 8px;
+            border: 1px solid #f2e9dc;
+        }
+
         .guide-msg {
             display: inline-block;
             background: #f4f4f4;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 30px;
             font-size: 0.9rem;
-            margin-top: 10px;
-            color: #666;
+            margin-top: 40px;
+            color: #888;
         }
 
-        /* 이미지 그리드 (한 줄에 4개) */
+        /* 그리드 설정 (한 줄에 4개) */
         .grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-            padding: 0 15px 60px;
+            gap: 10px;
+            padding: 0 15px 80px;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -70,10 +88,12 @@
             width: 100%;
             aspect-ratio: 1 / 1;
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             border: 1px solid #eee;
+            transition: transform 0.1s ease;
         }
+        .grid img:active { transform: scale(0.94); }
 
         /* 모달 팝업 */
         .modal {
@@ -89,41 +109,42 @@
         .modal img {
             width: 85%;
             max-width: 450px;
-            border-radius: 12px;
+            border-radius: 15px;
         }
         .close-btn {
-            margin-top: 25px;
+            margin-top: 30px;
             color: #fff;
-            border: 1px solid rgba(255,255,255,0.5);
-            padding: 10px 30px;
-            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 12px 40px;
+            border-radius: 30px;
             cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <!-- [수정] 로고/타이틀 삭제하고 이미지만 전체 노출 -->
+    <!-- 상단 배너 -->
     <section class="hero">
-        <img src="top-banner.jpg" alt="해례 글자블록 메인 배너">
+        <img src="top-banner.jpg" alt="해례 글자놀이터 메인 배너">
     </section>
 
+    <!-- [수정] 요청하신 멘트 적용 섹션 -->
     <section class="intro">
-        <p>
-            <span class="bold">해례 한글 글자블럭</span>은 <span class="highlight">한글 창제원리</span>를 기반으로 만든 <br>
-            <span class="bold">3D 입체 글자 블록</span>으로,
-        </p>
-        <p>
-            단어를 이루는 <span class="highlight">자음과 모음을 조립</span>하면 <br>
-            <span class="bold">해당 형태가 완성</span>되는 블록 입니다.
-        </p>
+        <span class="text-light">자음과 모음을 결합하는</span>
+        <span class="point-1">한글의 창제원리와 개념을 직관적으로 쉽고 재미있게!</span>
+        
+        <span class="text-light" style="margin-top: 10px;">글자놀이터는 3D 글자 블럭을 조립하며, 한글과 영어를</span>
+        <span class="point-2">'직접 만들고', '몸으로 익히고', '소리로 기억하는'<br>신개념 언어 체험 공간입니다.</span>
+
         <div class="guide-msg">
-            👇 <span class="bold">하단의 글자</span>를 눌러 조립 방법을 확인해보세요!
+            👇 <b>하단의 글자</b>를 눌러 조립 방법을 확인해보세요!
         </div>
     </section>
 
+    <!-- 글자 그리드 (1.jpg ~ 20.jpg) -->
     <div class="grid" id="gallery"></div>
 
+    <!-- GIF 팝업 -->
     <div id="modal" class="modal" onclick="closeModal()">
         <img id="modal-img" src="" alt="조립 가이드 영상">
         <div class="close-btn">닫기</div>
@@ -137,6 +158,7 @@
         for (let i = 1; i <= 20; i++) {
             const img = document.createElement('img');
             img.src = `${i}.jpg`; 
+            img.loading = "lazy";
             img.onclick = (e) => { e.stopPropagation(); openModal(i); };
             gallery.appendChild(img);
         }
